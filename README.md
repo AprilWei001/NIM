@@ -6,7 +6,7 @@
 
 
 ## UKBB SNP QC 
-QC with plink flags `--exclude <SNPs in mhc region txt file> --maf 0.001 --geno 0.01 --hwe 1e-7 --keep <ukbb wb unrelated individuals fam file> --make-bed --out <output file name (e.g., qced)>`
+SNP QC for UKBB whole-genome imputed data with plink flags `--exclude <SNPs in mhc region txt file> --maf 0.001 --geno 0.01 --hwe 1e-7 --keep <ukbb wb unrelated individuals fam file> --make-bed --out <output file name (e.g., qced)>`
 
 ## Whole genome simulation
 Simulate any genetic architecture on tabla: /home/aprilwei/projects/nimHeretability/wgSim/simAllArchitecture.sh 
