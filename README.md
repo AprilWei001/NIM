@@ -48,17 +48,23 @@ Extract the coordinate id from `nim.confident.bim` with
 
         `cat /u/home/s/sriram/group/sriram/projects/ukbio/data/geno/imp/filtered/nim.confident.bim |awk '{print $2}' > ND.original.id`
 
-%{note to self: originally also did `intersect -k1 0 -k2 0 -f1 ND.original.id -f2 UKBB.maf_daf_ld > ND.id` to get an interesect for SNP-by-SNP matching, and these are used in `writeAnnot.m` but then was updated with `writeAnnotOri.m` on Jan 14 and used in downstream anayses, so everything is okay!%}
+```diff
+- note to self: originally also did `intersect -k1 0 -k2 0 -f1 ND.original.id -f2 UKBB.maf_daf_ld > ND.id` to get an interesect for SNP-by-SNP matching, and these are used in `writeAnnot.m` but then was updated with `writeAnnotOri.m` on Jan 14 and used in downstream anayses, so everything is okay!
+```
 
 * tag SNPs
 
 Identify UKBB SNPs in high LD with confident NIMs with `plink --bfile <qced>  --show-tags ND.original.id  --tag-r2 0.99  --tag-kb 200 --out nimLD.99`
 
-%{note to self: all results for tag SNPs and tag SNPs annotation are based on 'ND.original.id' so everything downstream from here does not need any update.}
+ ```diff
+ - note to self: all results for tag SNPs and tag SNPs annotation are based on 'ND.original.id' so everything downstream from here does not need any update.
+ ```
 
 Calculate if the tag SNPs are more likely to match with Altai Neanderthal reference with `crfTags.m` where the CRF summaries need to be downloaded from %%% and the summaries used are in `summaries.release/EUR.hapmap/summaries/` 
 
-%{note to self: `crfTags.m` in  `/u/home/s/sriram/group/sriram/projects/ukbio/april/nimHeritability/simulation/adaptedScripts/match`%}
+```diff
+- note to self: `crfTags.m` in  `/u/home/s/sriram/group/sriram/projects/ukbio/april/nimHeritability/simulation/adaptedScripts/match
+```
 
 ### MAF
 We use 5 MAF bins, which split all QC-ed SNPs from low to high MAF into equal sized bins
@@ -79,7 +85,9 @@ Annotation with tag SNPs: `writeAnnotTags.m`, output 'tags.99.nol.anc.annot', 't
 
 Ancestry-MAF-LD based Annotation with tag SNPs: `writeAnnotMAFLD.m`, output 'tags.99.nol.anc.maf.ld.annot', and 'indNearEmptyBins.tags.nol.maf.ld.txt'. 
 
-%{note to self: `/u/home/s/sriram/group/sriram/projects/ukbio/april/nimHeritability/simulation/adaptedScripts/match`%}
+```diff
+- note to self: `/u/home/s/sriram/group/sriram/projects/ukbio/april/nimHeritability/simulation/adaptedScripts/match
+```
 ## Estimating heritability with RHE-mc
 ### Simulated data
 The simulated phenotype with gcta64 does not have a header, for example:
@@ -110,7 +118,9 @@ Run RHE-mc with the supply of genotype, phenotype, coavariate and anonotation fi
 ### H2 Partitioning
 From the output of RHE-mc, we extract the heritabiliity and standard error of heritability for each annotation in the non-overlapping setting to get the partitioned heritability estimates for SNPs in Neanderthal ancestry.
 
-%{note to self: currently in personal computer **and need to reanalyze these with the allOri.annot instead of the ori.annot%}
+```diff
+- note to self: currently in personal computer **and need to reanalyze these with the allOri.annot instead of the ori.annot
+```
 ### UKBB META-analysis
 
 %{note to self: code on computer `metaAnalysis.m` %}
@@ -121,5 +131,8 @@ Use plink with flag '--linear standard-beta'
         
         `plink --silent --bfile <qced>--pheno $OUT.phen --linear standard-beta --out <output file>`
 ### Susie 
-### Simulated data
-### UKBB
+### Benchmark Susie with simulated data
+```diff
+- note to self: /u/home/s/sriram/group/sriram/projects/ukbio/april/nimHeritability/simulation/adaptedScripts/fineMapping
+```
+### Apply to UKBB phenotypes
