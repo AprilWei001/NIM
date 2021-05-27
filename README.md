@@ -4,7 +4,7 @@
 * [UKBB SNP QC](#UKBB-SNP-QC)
 * [Whole-genome simulation](#Whole-genome-simulation)
 * [Estimating heritability with RHE-mc](#Estimating-heritability-with-RHE-mc)
-** [SNP annotation](##SNP-annotation)
+* [SNP annotation](##SNP-annotation)
 * [Fine mapping](#Fine-mapping)
 
 
