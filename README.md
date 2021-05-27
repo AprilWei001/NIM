@@ -183,7 +183,7 @@ This rscript takes the genotype text file input from the tested region. Such gen
 - note to self: 
 /u/home/s/sriram/group/sriram/projects/ukbio/april/nimHeritability/simulation/adaptedScripts/fineMapping
 ```
-### Apply to UKBB phenotypes
+### Susie to UKBB phenotypes
 
 ```diff
 - note to self:
