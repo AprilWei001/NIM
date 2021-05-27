@@ -3,7 +3,7 @@
 ## Table of contents
 * [UKBB SNP QC](#UKBB-SNP-QC)
 * [Whole-genome simulation](#Whole-genome-simulation)
-* [SNP annotation](#SNP annotation)
+* [SNP annotation](#SNP-annotation)
 * [Estimating heritability with RHE-mc](#Estimating-heritability-with-RHE-mc)
 * [Fine mapping](#Fine-mapping)
 
@@ -82,6 +82,22 @@ Ancestry-MAF-LD based Annotation with tag SNPs: `writeAnnotMAFLD.m`, output 'tag
 %{note to self: `/u/home/s/sriram/group/sriram/projects/ukbio/april/nimHeritability/simulation/adaptedScripts/match`%}
 ## Estimating heritability with RHE-mc
 ### Simulated data
+The simulated phenotype with gcta64 does not have a header, for example:
+
+        1000026 1000026 -179.62 
+        1000058 1000058 -116.748 
+        1000060 1000060 123.494 
+        1000075 1000075 60.4556
+This file can be directly used with plink for GWAS but RHE-mc takes phenotype file which starts with a header, hence require adding a header line with
+
+        `sed  -i '1 i\FID IID pheno' *.phen`
+Then we can get
+
+        FID IID pheno
+        1000026 1000026 -179.62 
+        1000058 1000058 -116.748 
+        1000060 1000060 123.494 
+        1000075 1000075 60.4556
 Run RHE-mc with the supply of genotype, phenotype, and annotation files for whole-genome simulated data with
 
         `RHEmc -g <genotype file> (e.g., qced)  -p <phenotype file> -annot <annotation file> -k 10 -jn 100  -o <output file>`
@@ -93,12 +109,17 @@ Run RHE-mc with the supply of genotype, phenotype, coavariate and anonotation fi
    
 ### H2 Partitioning
 From the output of RHE-mc, we extract the heritabiliity and standard error of heritability for each annotation in the non-overlapping setting to get the partitioned heritability estimates for SNPs in Neanderthal ancestry.
-%{note to self: currently in personal computer **and need to reanalyze these with the allOri.annot instead of the ori.annot %}
+
+%{note to self: currently in personal computer **and need to reanalyze these with the allOri.annot instead of the ori.annot%}
 ### UKBB META-analysis
 
 %{note to self: code on computer `metaAnalysis.m` %}
 
 ## Fine mapping
-
+### GWAS
+Use plink with flag '--linear standard-beta'
+        
+        `plink --silent --bfile <qced>--pheno $OUT.phen --linear standard-beta --out <output file>`
 ### Susie 
-### 
+### Simulated data
+### UKBB
