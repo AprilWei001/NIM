@@ -10,9 +10,13 @@
 
 ## UKBB SNP QC 
 SNP QC for UKBB whole-genome imputed data with plink flags 
-        `--exclude <SNPs in the mhc region txt file> --maf 0.001 --geno 0.01 --hwe 1e-7 --keep <ukbb wb unrelated individuals fam file> --make-bed --out <output file name (e.g., qced)>`
+        
+       plink  --bfile <ukbb imputed genotype data> --exclude <SNPs in the mhc region txt file> --maf 0.001 --geno 0.01 --hwe 1e-7 --keep <ukbb wb unrelated individuals fam file> --make-bed --out <output file name (e.g., qced)>
 
-%{note to self: find this information on hoffman /u/project/sgss/UKBB/data/imp/Qced/All/README, although the QC-ed data used are in /u/project/sgss/UKBB/data/imp/Qced/maf_0.001 which persumably only changes the flag --maf 0.01 into --maf 0.001%}
+
+```diff
+-note to self: find this information on hoffman /u/project/sgss/UKBB/data/imp/Qced/All/README, although the QC-ed data used are in /u/project/sgss/UKBB/data/imp/Qced/maf_0.001 which persumably only changes the flag --maf 0.01 into --maf 0.001
+```
 
 ## Whole-genome simulation
 Script: `simAnyArchitecture.sh`
@@ -36,7 +40,10 @@ The types of architecture can be:
 * RARE -- rare SNPs (defined as maf <= 0.05) contributes to 9000 causal variants, and common SNPs contributes 1000 causal variants, 
 * COMMON -- common SNPs (defined as maf <= 0.05) contributes to 9000 causal variants, and rare SNPs contributes 1000 causal variants,
 
-%{note to self: script and small sized dependencies moved to a folder on tabla: /home/aprilwei/projects/nimHeretability/github -- original simulations are outputs from other scripts but merged here for the purpose of sharing, tested runnable on tabla.%}
+
+```diff
+-note to self: script and small sized dependencies moved to a folder on tabla: /home/aprilwei/projects/nimHeretability/github -- original simulations are outputs from other scripts but merged here for the purpose of sharing, tested runnable on tabla.
+```
 
 ## SNP annotation
 ### Ancestry 
@@ -131,7 +138,8 @@ Use plink with flag '--linear standard-beta'
         
         `plink --silent --bfile <qced>--pheno $OUT.phen --linear standard-beta --out <output file>`
 ### Susie 
-Information about Susie can be found at https://stephenslab.github.io/susie-paper/index.html
+Information about Susie can be found at (https://stephenslab.github.io/susie-paper/index.html)
+
 After installing Susie in R, one can perform a single locus fine mapping which outputs confidence sets with my code `runSusie.R`
 
         R --slave --args <genotype text file > <phenotype file> < runSusie.R >
