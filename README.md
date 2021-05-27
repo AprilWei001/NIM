@@ -145,7 +145,7 @@ code on computer `metaAnalysis.m`
 ## Fine mapping
 
 ### Susie 
-Information about Susie can be found at (https://stephenslab.github.io/susie-paper/index.html)
+Information about Susie can be found at (https://stephenslab.github.io/susie-paper/index.html). It is an R package for fine mapping.
         
 This rscript takes the genotype text file input from the tested region. Such genotype file can be generated from 'bfile' with:
 
@@ -174,9 +174,9 @@ This rscript takes the genotype text file input from the tested region. Such gen
         
     3.3 Remove the genotype data
 
-*step 3 is automated by first outputing the range of all pruned-in SNP (with `getSuisieRange.m`) then looping 3.1-3.3.*
+*step 3 is automated by first outputing the range of all pruned-in SNP (with `getSuisieRange.m`) then looping through 3.1-3.3.* with bash script
 
-4. Analyze all Susie output 
+4. Analyze all Susie output with `getSusieStats.m`
 
         
 ```diff
