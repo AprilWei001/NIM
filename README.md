@@ -150,11 +150,12 @@ Use plink with flag '--linear standard-beta'
 ### Susie 
 Information about Susie can be found at (https://stephenslab.github.io/susie-paper/index.html)
 
-After installing Susie in R, one can perform a single locus fine mapping which outputs confidence sets with my code `runSusie.R`
+After installing Susie in R, one can perform a single locus fine mapping which outputs confidence sets with script `runSusie.R`
+Run with:
 
         R --slave --args <genotype text file > <phenotype file> < runSusie.R >
         
-This requires the genotype text file to be written for each region to be tested. From `bfile` to text file, we can use 
+This rscript takes the genotype text file input from the tested region. Such genotype file can be generated from 'bfile' with:
 
         plink --bfile <qced> --snps <range of the snps (e.g. 1:4669624-1:4869948)> --recode A --out <output genotype text file>
         
