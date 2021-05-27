@@ -4,7 +4,6 @@
 * [UKBB SNP QC](#UKBB-SNP-QC)
 * [Whole-genome simulation](#Whole-genome-simulation)
 * [Estimating heritability with RHE-mc](#Estimating-heritability-with-RHE-mc)
-* [SNP annotation](##SNP-annotation)
 * [Fine mapping](#Fine-mapping)
 
 
@@ -31,7 +30,11 @@ The types of architecture can be:
 %{note to self: script and small sized dependencies moved to a folder on tabla: /home/aprilwei/projects/nimHeretability/github -- original simulations are outputs from other scripts but merged here for the purpose of sharing, tested runnable on tabla.%}
 
 ## Estimating heritability with RHE-mc
+
 ### SNP annotation
+
 ### Partitioning
+
 ### META-analysis
+
 ## Fine mapping
