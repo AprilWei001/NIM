@@ -131,7 +131,17 @@ Use plink with flag '--linear standard-beta'
         
         `plink --silent --bfile <qced>--pheno $OUT.phen --linear standard-beta --out <output file>`
 ### Susie 
+Information about Susie can be found at https://stephenslab.github.io/susie-paper/index.html
+After installing Susie in R, one can perform a single locus fine mapping which outputs confidence sets with my code `runSusie.R`
+
+        R --slave --args <genotype text file > <phenotype file> < runSusie.R >
+        
+This requires the genotype text file to be written for each region to be tested. From `bfile` to text file, we can use 
+
+        plink --bfile <qced> --snps <range of the snps (e.g. 1:4669624-1:4869948)> --recode A --out <output genotype text file>
+        
 ### Benchmark Susie with simulated data
+
 ```diff
 - note to self: /u/home/s/sriram/group/sriram/projects/ukbio/april/nimHeritability/simulation/adaptedScripts/fineMapping
 ```
