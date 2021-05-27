@@ -15,7 +15,8 @@ SNP QC for UKBB whole-genome imputed data with plink flags
 
 
 ```diff
--note to self: find this information on hoffman /u/project/sgss/UKBB/data/imp/Qced/All/README, although the QC-ed data used are in /u/project/sgss/UKBB/data/imp/Qced/maf_0.001 which persumably only changes the flag --maf 0.01 into --maf 0.001
+-note to self: 
+find this information on hoffman /u/project/sgss/UKBB/data/imp/Qced/All/README, although the QC-ed data used are in /u/project/sgss/UKBB/data/imp/Qced/maf_0.001 which persumably only changes the flag --maf 0.01 into --maf 0.001
 ```
 
 ## Whole-genome simulation
@@ -42,7 +43,8 @@ The types of architecture can be:
 
 
 ```diff
--note to self: script and small sized dependencies moved to a folder on tabla: /home/aprilwei/projects/nimHeretability/github -- original simulations are outputs from other scripts but merged here for the purpose of sharing, tested runnable on tabla.
+-note to self: 
+script and small sized dependencies moved to a folder on tabla: /home/aprilwei/projects/nimHeretability/github -- original simulations are outputs from other scripts but merged here for the purpose of sharing, tested runnable on tabla.
 ```
 
 ## SNP annotation
@@ -56,7 +58,8 @@ Extract the coordinate id from `nim.confident.bim` with
         `cat /u/home/s/sriram/group/sriram/projects/ukbio/data/geno/imp/filtered/nim.confident.bim |awk '{print $2}' > ND.original.id`
 
 ```diff
-- note to self: originally also did `intersect -k1 0 -k2 0 -f1 ND.original.id -f2 UKBB.maf_daf_ld > ND.id` to get an interesect for SNP-by-SNP matching, and these are used in `writeAnnot.m` but then was updated with `writeAnnotOri.m` on Jan 14 and used in downstream anayses, so everything is okay!
+- note to self: 
+originally also did `intersect -k1 0 -k2 0 -f1 ND.original.id -f2 UKBB.maf_daf_ld > ND.id` to get an interesect for SNP-by-SNP matching, and these are used in `writeAnnot.m` but then was updated with `writeAnnotOri.m` on Jan 14 and used in downstream anayses, so everything is okay!
 ```
 
 * tag SNPs
@@ -64,13 +67,15 @@ Extract the coordinate id from `nim.confident.bim` with
 Identify UKBB SNPs in high LD with confident NIMs with `plink --bfile <qced>  --show-tags ND.original.id  --tag-r2 0.99  --tag-kb 200 --out nimLD.99`
 
  ```diff
- - note to self: all results for tag SNPs and tag SNPs annotation are based on 'ND.original.id' so everything downstream from here does not need any update.
+ - note to self: 
+ all results for tag SNPs and tag SNPs annotation are based on 'ND.original.id' so everything downstream from here does not need any update.
  ```
 
 Calculate if the tag SNPs are more likely to match with Altai Neanderthal reference with `crfTags.m` where the CRF summaries need to be downloaded from %%% and the summaries used are in `summaries.release/EUR.hapmap/summaries/` 
 
 ```diff
-- note to self: `crfTags.m` in  `/u/home/s/sriram/group/sriram/projects/ukbio/april/nimHeritability/simulation/adaptedScripts/match
+- note to self: 
+`crfTags.m` in  `/u/home/s/sriram/group/sriram/projects/ukbio/april/nimHeritability/simulation/adaptedScripts/match
 ```
 
 ### MAF
@@ -93,7 +98,8 @@ Annotation with tag SNPs: `writeAnnotTags.m`, output 'tags.99.nol.anc.annot', 't
 Ancestry-MAF-LD based Annotation with tag SNPs: `writeAnnotMAFLD.m`, output 'tags.99.nol.anc.maf.ld.annot', and 'indNearEmptyBins.tags.nol.maf.ld.txt'. 
 
 ```diff
-- note to self: `/u/home/s/sriram/group/sriram/projects/ukbio/april/nimHeritability/simulation/adaptedScripts/match
+- note to self: 
+`/u/home/s/sriram/group/sriram/projects/ukbio/april/nimHeritability/simulation/adaptedScripts/match
 ```
 ## Estimating heritability with RHE-mc
 ### Simulated data
@@ -126,11 +132,15 @@ Run RHE-mc with the supply of genotype, phenotype, coavariate and anonotation fi
 From the output of RHE-mc, we extract the heritabiliity and standard error of heritability for each annotation in the non-overlapping setting to get the partitioned heritability estimates for SNPs in Neanderthal ancestry.
 
 ```diff
-- note to self: currently in personal computer **and need to reanalyze these with the allOri.annot instead of the ori.annot
+- note to self: 
+currently in personal computer **and need to reanalyze these with the allOri.annot instead of the ori.annot
 ```
 ### UKBB META-analysis
 
-%{note to self: code on computer `metaAnalysis.m` %}
+```diff
+- note to self: 
+code on computer `metaAnalysis.m`
+```
 
 ## Fine mapping
 ### GWAS
@@ -151,6 +161,7 @@ This requires the genotype text file to be written for each region to be tested.
 ### Benchmark Susie with simulated data
 
 ```diff
-- note to self: /u/home/s/sriram/group/sriram/projects/ukbio/april/nimHeritability/simulation/adaptedScripts/fineMapping
+- note to self: 
+/u/home/s/sriram/group/sriram/projects/ukbio/april/nimHeritability/simulation/adaptedScripts/fineMapping
 ```
 ### Apply to UKBB phenotypes
