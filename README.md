@@ -143,26 +143,49 @@ code on computer `metaAnalysis.m`
 ```
 
 ## Fine mapping
-### GWAS
-Use plink with flag '--linear standard-beta'
-        
-        `plink --silent --bfile <qced>--pheno $OUT.phen --linear standard-beta --out <output file>`
+
 ### Susie 
 Information about Susie can be found at (https://stephenslab.github.io/susie-paper/index.html)
-
-After installing Susie in R, one can perform a single locus fine mapping which outputs confidence sets with script `runSusie.R`
-Run with:
-
-        R --slave --args <genotype text file > <phenotype file> < runSusie.R >
         
 This rscript takes the genotype text file input from the tested region. Such genotype file can be generated from 'bfile' with:
 
         plink --bfile <qced> --snps <range of the snps (e.g. 1:4669624-1:4869948)> --recode A --out <output genotype text file>
         
 ### Benchmark Susie with simulated data
+1. GWAS with plink, 
 
+        `plink --silent --bfile <qced>--pheno $OUT.phen --linear standard-beta --out <output file>`
+        
+  then extract significant SNPs with P < 10^(-10) with `getSignificantSNPs.m`
+  
+2. LD pruning of significant SNPs 
+        
+        plink --bfile <qced>  --extract <list of SNPs>  --indep-pairwise 100kb 1 0.99 --out <output filename>
+        
+3. For each pruned-in GWAS signficant SNP
+
+    3.1 Output the 200 kb region surrounding this SNP, for example:
+
+        plink --bfile <qced> --snps <range of the snps (e.g. 1:4669624-1:4869948)> --recode A --out <output genotype text file>
+             
+    3.2 Run Susie on ld-pruned SNPs with script `runSusie.R`
+
+        R --slave --args <genotype text file > <phenotype file> < runSusie.R >
+        
+    3.3 Remove the genotype data
+
+*step 3 is automated by first outputing the range of all pruned-in SNP (with `getSuisieRange.m`) then looping 3.1-3.3.*
+
+4. Analyze all Susie output 
+
+        
 ```diff
 - note to self: 
 /u/home/s/sriram/group/sriram/projects/ukbio/april/nimHeritability/simulation/adaptedScripts/fineMapping
 ```
 ### Apply to UKBB phenotypes
+
+```diff
+- note to self:
+Collection of phenotypes: https://docs.google.com/spreadsheets/d/1L7XNxSm1M8rGbJy0G8TydsDhiIgzImhs9LUOZxgN8XM/edit?usp=sharing
+```
