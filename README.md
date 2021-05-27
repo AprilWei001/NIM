@@ -2,7 +2,10 @@
 
 ## Table of contents
 * [UKBB SNP QC](#UKBB-SNP-QC)
-* [Whole genome simulation](#Whole-genome-simulation)
+* [Whole-genome simulation](#Whole-genome-simulation)
+* [Estimating heritability with RHE-mc](#Estimating-heritability-with-RHE-mc)
+** [SNP annotation](##SNP-annotation)
+* [Fine mapping](#Fine-mapping)
 
 
 ## UKBB SNP QC 
@@ -10,7 +13,7 @@ SNP QC for UKBB whole-genome imputed data with plink flags `--exclude <SNPs in t
 
 %{note to self: find this information on hoffman /u/project/sgss/UKBB/data/imp/Qced/All/README, although the QC-ed data used are in /u/project/sgss/UKBB/data/imp/Qced/maf_0.001 which persumably only changes the flag --maf 0.01 into --maf 0.001%}
 
-## Whole genome simulation
+## Whole-genome simulation
 Script: simAnyArchitecture.sh
 * This simulation depends on software: plink, gcta64, cripts: shuffle.py
 * input files: <genotype input file name (e.g. qced)>  <.frq> which has the in-sample MAF of SNPs used, and <.ld> in-sample ldscore: comptued with `gcta64 --bfile <genotype input file name (e.g. qced)> --ld-score --ld-wind 10000 --out <output filename>` 
@@ -27,3 +30,8 @@ The types of architecture can be:
 
 %{note to self: script and small sized dependencies moved to a folder on tabla: /home/aprilwei/projects/nimHeretability/github -- original simulations are outputs from other scripts but merged here for the purpose of sharing, tested runnable on tabla.%}
 
+## Estimating heritability with RHE-mc
+### SNP annotation
+### Partitioning
+### META-analysis
+## Fine mapping
