@@ -147,10 +147,10 @@ code on computer `metaAnalysis.m`
 ## Fine mapping
 
 ### Information about SuSiE 
-Information about Susie can be found at [SuSie GitHub](https://stephenslab.github.io/susie-paper/index.html). It is an R package for fine mapping.
+Information about Susie can be found at [SuSiE GitHub](https://stephenslab.github.io/susie-paper/index.html). It is an R package for fine mapping.
         
         
-### Benchmark Susie with simulated data
+### Benchmark SuSiE with simulated data
 1. GWAS with plink, 
 
         `plink --silent --bfile <qced>--pheno $OUT.phen --linear standard-beta --out <output file>`
@@ -167,7 +167,7 @@ Information about Susie can be found at [SuSie GitHub](https://stephenslab.githu
 
         plink --bfile <qced> --snps <range of the snps (e.g. 1:4669624-1:4869948)> --recode A --out <output genotype text file>
              
-    3.2 Run Susie on ld-pruned SNPs with script `runSusie.R` 
+    3.2 Run SuSiE on ld-pruned SNPs with script `runSusie.R` 
     
     *`runSusie.R` takes the genotype text file input from the tested region generated in 3.1*
 
