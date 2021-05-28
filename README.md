@@ -23,7 +23,7 @@ find this information on hoffman /u/project/sgss/UKBB/data/imp/Qced/All/README, 
 Simulation cript: `simAnyArchitecture.sh`
 *This simulation script depends on software: [plink](https://www.cog-genomics.org/plink2/), [gcta64](https://cnsgenomics.com/software/gcta/#Overview), script: `shuffle.py`*
 
-*input files: <genotype input file name (e.g. qced)>  <.frq> which has the in-sample MAF of SNPs used, and <.ld> *
+*input files: <genotype input file name (e.g. qced)>  <.frq> which has the in-sample MAF of SNPs used, and <.ld>*
 
 In-sample ldscore is comptued with 
 
