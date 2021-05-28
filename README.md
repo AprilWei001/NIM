@@ -103,7 +103,7 @@ Ancestry-MAF-LD based Annotation with tag SNPs: `writeAnnotMAFLD.m`, output 'tag
 ```
 ## Estimating heritability with RHE-mc
 ### Information about RHE-mc
-Information about RHE-mc can be found at (https://github.com/sriramlab/RHE-mc)
+Information about RHE-mc can be found at [RHE-mc GitHub](https://github.com/sriramlab/RHE-mc)
 ### Simulated data
 The gcta64 simulated phenotype does not have a header, e.g.:
 
@@ -147,7 +147,7 @@ code on computer `metaAnalysis.m`
 ## Fine mapping
 
 ### Install SuSiE 
-Information about Susie can be found at (https://stephenslab.github.io/susie-paper/index.html). It is an R package for fine mapping.
+Information about Susie can be found at [SuSie Github](https://stephenslab.github.io/susie-paper/index.html). It is an R package for fine mapping.
         
         
 ### Benchmark Susie with simulated data
