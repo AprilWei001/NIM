@@ -20,7 +20,7 @@ find this information on hoffman /u/project/sgss/UKBB/data/imp/Qced/All/README, 
 ```
 
 ## Whole-genome simulation
-Script: `simAnyArchitecture.sh`
+Simulation cript: `simAnyArchitecture.sh`
 * This simulation depends on software: plink, gcta64, cripts: `shuffle.py`
 * input files: <genotype input file name (e.g. qced)>  <.frq> which has the in-sample MAF of SNPs used, and <.ld> in-sample ldscore: comptued with 
 
