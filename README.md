@@ -146,8 +146,8 @@ code on computer `metaAnalysis.m`
 
 ## Fine mapping
 
-### Install SuSiE 
-Information about Susie can be found at [SuSie Github](https://stephenslab.github.io/susie-paper/index.html). It is an R package for fine mapping.
+### Information about SuSiE 
+Information about Susie can be found at [SuSie GitHub](https://stephenslab.github.io/susie-paper/index.html). It is an R package for fine mapping.
         
         
 ### Benchmark Susie with simulated data
