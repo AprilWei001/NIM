@@ -57,7 +57,7 @@ We use two annotation of ancestry: neanderthal ancestry and modern human ancestr
 
 Extract the coordinate id from `nim.confident.bim` with 
 
-        `cat /u/home/s/sriram/group/sriram/projects/ukbio/data/geno/imp/filtered/nim.confident.bim |awk '{print $2}' > ND.original.id`
+        cat /u/home/s/sriram/group/sriram/projects/ukbio/data/geno/imp/filtered/nim.confident.bim |awk '{print $2}' > ND.original.id
 
 ```diff
 - note to self: 
@@ -125,12 +125,12 @@ Then we can get the correct format for RHE-mc, e.g.:
         1000075 1000075 60.4556
 Run RHE-mc with the supply of genotype, phenotype, and annotation files for whole-genome simulated data with
 
-        `RHEmc -g <genotype file> (e.g., qced)  -p <phenotype file> -annot <annotation file> -k 10 -jn 100  -o <output file>`
+        RHEmc -g <genotype file> (e.g., qced)  -p <phenotype file> -annot <annotation file> -k 10 -jn 100  -o <output file>
 
 ### UKBB data       
 Run RHE-mc with the supply of genotype, phenotype, coavariate and anonotation files for UKBB data.
 
-        `RHEmc -g <genotype file> (e.g., qced)  -p <phenotype file> -c <covar file>  -annot <annotation file> -k 10 -jn 100  -o <output file>`
+        RHEmc -g <genotype file> (e.g., qced)  -p <phenotype file> -c <covar file>  -annot <annotation file> -k 10 -jn 100  -o <output file>
    
 ### H2 Partitioning
 From the output of RHE-mc, we extract the heritabiliity and standard error of heritability for each annotation in the non-overlapping setting to get the partitioned heritability estimates for SNPs in Neanderthal ancestry.
@@ -155,7 +155,7 @@ Information about Susie can be found at [SuSiE GitHub](https://stephenslab.githu
 ### Benchmark SuSiE with simulated data
 1. GWAS with plink, 
 
-        `plink --silent --bfile <qced>--pheno $OUT.phen --linear standard-beta --out <output file>`
+        plink --silent --bfile <qced>--pheno $OUT.phen --linear standard-beta --out <output file>
         
   then extract significant SNPs with P < 10^(-10) with `getSignificantSNPs.m`
   
