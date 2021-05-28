@@ -144,12 +144,9 @@ code on computer `metaAnalysis.m`
 
 ## Fine mapping
 
-### Susie 
+### Install SuSiE 
 Information about Susie can be found at (https://stephenslab.github.io/susie-paper/index.html). It is an R package for fine mapping.
         
-This rscript takes the genotype text file input from the tested region. Such genotype file can be generated from 'bfile' with:
-
-        plink --bfile <qced> --snps <range of the snps (e.g. 1:4669624-1:4869948)> --recode A --out <output genotype text file>
         
 ### Benchmark Susie with simulated data
 1. GWAS with plink, 
@@ -168,22 +165,23 @@ This rscript takes the genotype text file input from the tested region. Such gen
 
         plink --bfile <qced> --snps <range of the snps (e.g. 1:4669624-1:4869948)> --recode A --out <output genotype text file>
              
-    3.2 Run Susie on ld-pruned SNPs with script `runSusie.R`
+    3.2 Run Susie on ld-pruned SNPs with script `runSusie.R` 
+    
+    *`runSusie.R` takes the genotype text file input from the tested region generated in 3.1*
 
         R --slave --args <genotype text file > <phenotype file> < runSusie.R >
         
-    3.3 Remove the genotype data
+    3.3 Remove the genotype data and plink log file
 
 *step 3 is automated by first outputing the range of all pruned-in SNP (with `getSuisieRange.m`) then looping through 3.1-3.3.* with bash script
 
 4. Analyze all Susie output with `getSusieStats.m`
 
-        
 ```diff
 - note to self: 
 /u/home/s/sriram/group/sriram/projects/ukbio/april/nimHeritability/simulation/adaptedScripts/fineMapping
 ```
-### Susie to UKBB phenotypes
+### SuSiE to UKBB phenotypes
 
 ```diff
 - note to self:
