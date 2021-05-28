@@ -102,8 +102,10 @@ Ancestry-MAF-LD based Annotation with tag SNPs: `writeAnnotMAFLD.m`, output 'tag
 `/u/home/s/sriram/group/sriram/projects/ukbio/april/nimHeritability/simulation/adaptedScripts/match
 ```
 ## Estimating heritability with RHE-mc
+### Information about RHE-mc
+Information about RHE-mc can be found at (https://github.com/sriramlab/RHE-mc)
 ### Simulated data
-The simulated phenotype with gcta64 does not have a header, for example:
+The gcta64 simulated phenotype does not have a header, e.g.:
 
         1000026 1000026 -179.62 
         1000058 1000058 -116.748 
@@ -112,7 +114,7 @@ The simulated phenotype with gcta64 does not have a header, for example:
 This file can be directly used with plink for GWAS but RHE-mc takes phenotype file which starts with a header, hence require adding a header line with
 
         `sed  -i '1 i\FID IID pheno' *.phen`
-Then we can get
+Then we can get the correct format for RHE-mc, e.g.:
 
         FID IID pheno
         1000026 1000026 -179.62 
@@ -122,7 +124,6 @@ Then we can get
 Run RHE-mc with the supply of genotype, phenotype, and annotation files for whole-genome simulated data with
 
         `RHEmc -g <genotype file> (e.g., qced)  -p <phenotype file> -annot <annotation file> -k 10 -jn 100  -o <output file>`
-*a simple bash script can loop through these*
 
 ### UKBB data       
 Run RHE-mc with the supply of genotype, phenotype, coavariate and anonotation files for UKBB data.
