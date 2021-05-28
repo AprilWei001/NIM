@@ -122,7 +122,8 @@ Then we can get
 Run RHE-mc with the supply of genotype, phenotype, and annotation files for whole-genome simulated data with
 
         `RHEmc -g <genotype file> (e.g., qced)  -p <phenotype file> -annot <annotation file> -k 10 -jn 100  -o <output file>`
-        
+*a simple bash script can loop through these*
+
 ### UKBB data       
 Run RHE-mc with the supply of genotype, phenotype, coavariate and anonotation files for UKBB data.
 
