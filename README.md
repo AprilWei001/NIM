@@ -83,7 +83,7 @@ We use 5 MAF bins, which split all QC-ed SNPs from low to high MAF into equal si
 ### LD
 We use 5 LD bins, which split all QC-ed SNPs from low to high LD-score into equal sized bins.
 
-### generate non-overlapping annotation
+### Consruct non-overlapping annotation
 
 In the output file name annotation for ancestry is indicated as '.anc', maf with '.maf', and ld-score with '.ld'. 
 
