@@ -91,7 +91,7 @@ In the output file name annotation for ancestry is indicated as '.anc', maf with
 
 The annotation is non-overlapping, meaning that SNPs are partitioned into combinations of annotation, hence each SNP belongs to one and only one annotation. 
 
-For example, in a file named with 'nol.anc.maf.annot', there are 10 annotations total (2 ancestry * 5 maf), with the Neanderthal ancestry into 5 maf bins, and modern human ancestry into 5 maf bins. *An exception is '.anc.maf.ld' annotation which should have 2*5*5 = 50 non-overlapping bins, but because there are few high MAF Neanderthal SNPs and low LD-score Neanderthal SNPs, some bins are empty or near empty, hence we remove the bins with smaller than 30 SNPs in them.
+For example, in a file named with 'nol.anc.maf.annot', there are 10 annotations total (2 ancestry * 5 maf), with the Neanderthal ancestry into 5 maf bins, and modern human ancestry into 5 maf bins. 
 
 Annotation  with confident NIM: `writeAnnotOri.m`, output 'allOri.nol.anc.annot', 'allOri.nol.anc.maf.annot', 'allOri.nol.anc.ld.annot'
 
@@ -99,6 +99,7 @@ Annotation with tag SNPs: `writeAnnotTags.m`, output 'tags.99.nol.anc.annot', 't
 
 Ancestry-MAF-LD based Annotation with tag SNPs: `writeAnnotMAFLD.m`, output 'tags.99.nol.anc.maf.ld.annot', and 'indNearEmptyBins.tags.nol.maf.ld.txt'. 
 
+*An exception is '.anc.maf.ld' annotation which should have 2*5*5 = 50 non-overlapping bins, but because there are few high MAF Neanderthal SNPs and low LD-score Neanderthal SNPs, some bins are empty or near empty, hence we remove the bins with smaller than 30 SNPs in them. This particular annotation is only constructed for Tag SNPs because the number of confident NIMs is too small to have so many annotations.*
 ```diff
 - note to self: 
 `/u/home/s/sriram/group/sriram/projects/ukbio/april/nimHeritability/simulation/adaptedScripts/match
