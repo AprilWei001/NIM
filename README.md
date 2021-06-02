@@ -176,6 +176,8 @@ Information about Susie can be found at [SuSiE GitHub](https://stephenslab.githu
     *`runSusie.R` takes the genotype text file input from the tested region generated in 3.1*
 
         R --slave --args <genotype text file > <phenotype file> < runSusie.R >
+    
+    *SuSiE requres the genotype file to be loaded in R, hence asks for quite a bit of memory. For 200kb region in the UKBB data, it could be as small as 20 GB or as large as 50 GB.*
         
     3.3 Remove the genotype data and plink log file
 
