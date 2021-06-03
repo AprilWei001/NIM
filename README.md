@@ -165,37 +165,31 @@ In this part, we perform from three different sets of tests: GWAS significant SN
   then extract significant SNPs with P < 10^(-10) with `getSignificantSNPs.m`
   
 2. LD pruning of significant SNPs 
-        
+
         plink --bfile <qced>  --extract <list of SNPs>  --indep-pairwise 100kb 1 0.99 --out <output filename>
         
 3. For each pruned-in GWAS signficant SNP
-
     3.1 Output the 200 kb region surrounding this SNP, for example:
 
         plink --bfile <qced> --snps <range of the snps (e.g. 1:4669624-1:4869948)> --recode A --out <output genotype text file>
-             
-    3.2 Run SuSiE on the 200kb region surrounding the SNP with script `runSusie.R` 
-    
-    *`runSusie.R` takes the genotype text file input from the tested region generated in 3.1*
-
-        R --slave --args <genotype text file > <phenotype file> < runSusie.R >
-    
-    *SuSiE requres the genotype file to be loaded in R, hence asks for quite a bit of memory. For 200kb region in the UKBB data, it could be as small as 20 GB or as large as 50 GB.*
         
+    3.2 Run SuSiE on the 200kb region surrounding the SNP with script `runSusie.R` 
+   
+    *`runSusie.R` takes the genotype text file input from the tested region generated in 3.1*
+    
+        R --slave --args <genotype text file > <phenotype file> < runSusie.R >
+        
+    *SuSiE requres the genotype file to be loaded in R, hence asks for quite a bit of memory. For 200kb region in the UKBB data, it could be as small as 20 GB or as large as 50 GB.*
     3.3 Remove the genotype data and plink log file
-
+    
 *step 3 is automated by first outputing the range of all pruned-in SNP (with `getSuisieRange.m`) then looping through 3.1-3.3.* with bash script
-
 4. Analyze all Susie output with `getSusieStats.m`
 
 #### GWAS significant NIMs
 1. GWAS with plink, then extrat significant NIMs with P < 10^(-10) with `getSignificantSNPs.m`
-
 2. For each GWAS signficant NIM
-
         2.1 Output the 200 kb region surrounding this NIM
         2.2 Run SuSiE on the 200kb region surrounding the NIM with script `runSusie.R` 
-        
 3. Analyze all Susie output with `getSusieStats.m`
 
 #### Sliding window analysis
