@@ -10,8 +10,8 @@
 
 ## UKBB SNP QC 
 SNP QC for UKBB whole-genome imputed data with plink flags 
-        
-       plink  --bfile <ukbb imputed genotype data> --exclude <SNPs in the mhc region txt file> --maf 0.001 --geno 0.01 --hwe 1e-7 --keep <ukbb wb unrelated individuals fam file> --make-bed --out <output file name (e.g., qced)>
+
+        plink  --bfile <ukbb imputed genotype data> --exclude <SNPs in the mhc region txt file> --maf 0.001 --geno 0.01 --hwe 1e-7 --keep <ukbb wb unrelated individuals fam file> --make-bed --out <output file name (e.g., qced)>
 
 
 ```diff
@@ -174,9 +174,9 @@ In this part, we perform from three different sets of tests: GWAS significant SN
         plink --bfile <qced> --snps <range of the snps (e.g. 1:4669624-1:4869948)> --recode A --out <output genotype text file>
         
     3.2 Run SuSiE on the 200kb region surrounding the SNP with script `runSusie.R` 
-   
+
     *`runSusie.R` takes the genotype text file input from the tested region generated in 3.1*
-    
+
         R --slave --args <genotype text file > <phenotype file> < runSusie.R >
         
     *SuSiE requres the genotype file to be loaded in R, hence asks for quite a bit of memory. For 200kb region in the UKBB data, it could be as small as 20 GB or as large as 50 GB.*
