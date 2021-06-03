@@ -155,6 +155,9 @@ Information about Susie can be found at [SuSiE GitHub](https://stephenslab.githu
         
         
 ### Benchmark SuSiE with simulated data
+
+In this part, we perform from three different sets of tests: GWAS significant SNPs, GWAS significant NIMs, sliding window across the genome.
+#### GWAS significant SNPs
 1. GWAS with plink, 
 
         plink --silent --bfile <qced>--pheno $OUT.phen --linear standard-beta --out <output file>
@@ -171,7 +174,7 @@ Information about Susie can be found at [SuSiE GitHub](https://stephenslab.githu
 
         plink --bfile <qced> --snps <range of the snps (e.g. 1:4669624-1:4869948)> --recode A --out <output genotype text file>
              
-    3.2 Run SuSiE on ld-pruned SNPs with script `runSusie.R` 
+    3.2 Run SuSiE on the 200kb region surrounding the SNP with script `runSusie.R` 
     
     *`runSusie.R` takes the genotype text file input from the tested region generated in 3.1*
 
@@ -184,6 +187,24 @@ Information about Susie can be found at [SuSiE GitHub](https://stephenslab.githu
 *step 3 is automated by first outputing the range of all pruned-in SNP (with `getSuisieRange.m`) then looping through 3.1-3.3.* with bash script
 
 4. Analyze all Susie output with `getSusieStats.m`
+
+#### GWAS significant NIMs
+1. GWAS with plink, then extrat significant NIMs with P < 10^(-10) with `getSignificantSNPs.m`
+
+2. For each GWAS signficant NIM
+
+        2.1 Output the 200 kb region surrounding this NIM
+        2.2 Run SuSiE on the 200kb region surrounding the NIM with script `runSusie.R` 
+        
+3. Analyze all Susie output with `getSusieStats.m`
+
+#### Sliding window analysis
+
+1. Divide genomes into 200kb windows with 100kb step size.
+2. For each window:
+        2.1 Output the 200 kb region 
+        2.2 Run SuSiE on the 200kb region with script `runSusie.R` 
+3. Analyze all Susie output with `getSusieStats.m`
 
 ```diff
 - note to self: 
