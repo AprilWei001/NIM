@@ -9,15 +9,10 @@
 
 
 ## UKBB SNP QC 
-SNP QC for UKBB whole-genome imputed data with plink flags 
+SNP QC for UKBB whole-genome imputed data is the same as described in [RHE-mc paper](https://www.nature.com/articles/s41467-020-17576-9)
 
         plink  --bfile <ukbb imputed genotype data> --exclude <SNPs in the mhc region txt file> --maf 0.001 --geno 0.01 --hwe 1e-7 --keep <ukbb wb unrelated individuals fam file> --make-bed --out <output file name (e.g., qced)>
 
-
-```diff
--note to self: 
-find this information on hoffman /u/project/sgss/UKBB/data/imp/Qced/All/README, although the QC-ed data used are in /u/project/sgss/UKBB/data/imp/Qced/maf_0.001 which persumably only changes the flag --maf 0.01 into --maf 0.001
-```
 
 ## Whole-genome simulation
 Simulation cript: `simAnyArchitecture.sh`
@@ -45,29 +40,10 @@ The types of architecture can be:
 * COMMON -- common SNPs (defined as maf <= 0.05) contributes to 9000 causal variants, and rare SNPs contributes 1000 causal variants,
 
 
-```diff
--note to self: 
-script and small sized dependencies moved to a folder on tabla: /home/aprilwei/projects/nimHeretability/github -- original simulations are outputs from other scripts but merged here for the purpose of sharing, tested runnable on tabla.
-```
 
 ## SNP annotation
 ### Ancestry 
-We use two annotation of ancestry: neanderthal ancestry and modern human ancestry. Neanderthal ancestry is defined either with confident NIM or with tag SNPs, and modern human ancestry is therefore the SNPs that are not confident NIMs, or the SNPs that are not tag SNPs.
-
-* confident NIM
-
-Extract the coordinate id from `nim.confident.bim` with 
-
-        cat /u/home/s/sriram/group/sriram/projects/ukbio/data/geno/imp/filtered/nim.confident.bim |awk '{print $2}' > ND.original.id
-
-```diff
-- note to self: 
-originally also did `intersect -k1 0 -k2 0 -f1 ND.original.id -f2 UKBB.maf_daf_ld > ND.id` to get an interesect for SNP-by-SNP matching, and these are used in `writeAnnot.m` but then was updated with `writeAnnotOri.m` on Jan 14 and used in downstream anayses, so everything is okay!
-```
-
-* tag SNPs
-
-Identify UKBB SNPs in high LD with confident NIMs with `plink --bfile <qced>  --show-tags ND.original.id  --tag-r2 0.99  --tag-kb 200 --out nimLD.99`
+We use two annotation of ancestry: neanderthal ancestry and modern human ancestry. We first get the list of confident NIMs from [Sankararaman et al 2014](https://www.nature.com/articles/nature12961) in 1KG EUR populations. Then we expand it to include all the SNPs in strong LD (r^2 >= 0.99) with any confident NIMs as expanded NIMs with `plink --bfile <qced>  --show-tags <confident NIMs>  --tag-r2 0.99  --tag-kb 200 --out <expanded NIMs>`
 
  ```diff
  - note to self: 
