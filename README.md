@@ -74,7 +74,7 @@ The gcta64 simulated phenotype does not have a header, e.g.:
         1000075 1000075 60.4556
 This file can be directly used with plink for GWAS but RHE-mc takes phenotype file which starts with a header, hence require adding a header line with
 
-        `sed  -i '1 i\FID IID pheno' *.phen`
+        sed  -i '1 i\FID IID pheno' *.phen
 Then we can get the correct format for RHE-mc, e.g.:
 
         FID IID pheno
