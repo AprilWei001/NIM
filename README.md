@@ -45,18 +45,6 @@ The types of architecture can be:
 ### Ancestry 
 We use two annotation of ancestry: neanderthal ancestry and modern human ancestry. We first get the list of confident NIMs from [Sankararaman et al 2014](https://www.nature.com/articles/nature12961) in 1KG EUR populations. Then we expand it to include all the SNPs in strong LD (r^2 >= 0.99) with any confident NIMs as expanded NIMs with `plink --bfile <qced>  --show-tags <confident NIMs>  --tag-r2 0.99  --tag-kb 200 --out <expanded NIMs>`
 
- ```diff
- - note to self: 
- all results for tag SNPs and tag SNPs annotation are based on 'ND.original.id' so everything downstream from here does not need any update.
- ```
-
-Calculate if the tag SNPs are more likely to match with Altai Neanderthal reference with `crfTags.m` where the CRF summaries need to be downloaded from %%% and the summaries used are in `summaries.release/EUR.hapmap/summaries/` 
-
-```diff
-- note to self: 
-`crfTags.m` in  `/u/home/s/sriram/group/sriram/projects/ukbio/april/nimHeritability/simulation/adaptedScripts/match
-```
-
 ### MAF
 We use 5 MAF bins, which split all QC-ed SNPs from low to high MAF into equal sized bins
 ### LD
@@ -70,20 +58,13 @@ The annotation is non-overlapping, meaning that SNPs are partitioned into combin
 
 For example, in a file named with 'nol.anc.maf.annot', there are 10 annotations total (2 ancestry * 5 maf), with the Neanderthal ancestry into 5 maf bins, and modern human ancestry into 5 maf bins. 
 
-Annotation  with confident NIM: `writeAnnotOri.m`, output 'allOri.nol.anc.annot', 'allOri.nol.anc.maf.annot', 'allOri.nol.anc.ld.annot'
-
-Annotation with tag SNPs: `writeAnnotTags.m`, output 'tags.99.nol.anc.annot', 'tags.99.nol.anc.maf.annot', 'tags.99.nol.anc.ld.annot'
-
-Ancestry-MAF-LD based Annotation with tag SNPs: `writeAnnotMAFLD.m`, output 'tags.99.nol.anc.maf.ld.annot', and 'indNearEmptyBins.tags.nol.maf.ld.txt'. 
-
 *An exception is '.anc.maf.ld' annotation which should have 2*5*5 = 50 non-overlapping bins, but because there are few high MAF Neanderthal SNPs and low LD-score Neanderthal SNPs, some bins are empty or near empty, hence we remove the bins with smaller than 30 SNPs in them. This particular annotation is only constructed for Tag SNPs because the number of confident NIMs is too small to have so many annotations.*
-```diff
-- note to self: 
-`/u/home/s/sriram/group/sriram/projects/ukbio/april/nimHeritability/simulation/adaptedScripts/match
-```
+
 ## Estimating heritability with RHE-mc
 ### Information about RHE-mc
-Information about RHE-mc can be found at [RHE-mc GitHub](https://github.com/sriramlab/RHE-mc)
+In this study we use an extension of RHE-mc which takes a coefficient file to allow us to define new summary statistics from linear combinations (`-coeff flag`) of the variance components. Both the point estimate and the standard error of the summary statistics are estimated from jackknife.
+Information about the original RHE-mc can be found at [RHE-mc GitHub](https://github.com/sriramlab/RHE-mc)
+This new version with extension is now available at [RHE-mc](https:)
 ### Simulated data
 The gcta64 simulated phenotype does not have a header, e.g.:
 
@@ -103,26 +84,15 @@ Then we can get the correct format for RHE-mc, e.g.:
         1000075 1000075 60.4556
 Run RHE-mc with the supply of genotype, phenotype, and annotation files for whole-genome simulated data with
 
-        RHEmc -g <genotype file> (e.g., qced)  -p <phenotype file> -annot <annotation file> -k 10 -jn 100  -o <output file>
+        RHEmc_mem -g <genotype file> -p <phenotype file> -coeff <weight coefficient> -annot <annotation file> -k 10 -jn 100  -o <output file>
 
 ### UKBB data       
 Run RHE-mc with the supply of genotype, phenotype, coavariate and anonotation files for UKBB data.
 
-        RHEmc -g <genotype file> (e.g., qced)  -p <phenotype file> -c <covar file>  -annot <annotation file> -k 10 -jn 100  -o <output file>
+        RHEmc_mem -g <genotype file>  -p <phenotype file> -c <covar file>  -coeff <weight coefficient>  -annot <annotation file> -k 10 -jn 100  -o <output file>
    
 ### H2 Partitioning
-From the output of RHE-mc, we extract the heritabiliity and standard error of heritability for each annotation in the non-overlapping setting to get the partitioned heritability estimates for SNPs in Neanderthal ancestry.
-
-```diff
-- note to self: 
-currently in personal computer **and need to reanalyze these with the allOri.annot instead of the ori.annot
-```
-### UKBB META-analysis
-
-```diff
-- note to self: 
-code on computer `metaAnalysis.m`
-```
+From the output of RHE-mc, we extract the heritabiliity and standard error of heritability for each summary statatistic we defined.
 
 ## Fine mapping
 
