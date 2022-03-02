@@ -102,8 +102,6 @@ Information about Susie can be found at [SuSiE GitHub](https://stephenslab.githu
         
 ### Benchmark SuSiE with simulated data
 
-In this part, we perform from three different sets of tests: GWAS significant SNPs, GWAS significant NIMs, sliding window across the genome.
-#### GWAS significant SNPs
 1. GWAS with plink, 
 
         plink --silent --bfile <qced>--pheno $OUT.phen --linear standard-beta --out <output file>
@@ -129,30 +127,8 @@ In this part, we perform from three different sets of tests: GWAS significant SN
     3.3 Remove the genotype data and plink log file
     
 *step 3 is automated by first outputing the range of all pruned-in SNP (with `getSuisieRange.m`) then looping through 3.1-3.3.* with bash script
-4. Analyze all Susie output with `getSusieStats.m`
+4. Analyze SuSiE outputs and determine the boundary and credible NIM set
 
-#### GWAS significant NIMs
-1. GWAS with plink, then extrat significant NIMs with P < 10^(-10) with `getSignificantSNPs.m`
-2. For each GWAS signficant NIM
-        2.1 Output the 200 kb region surrounding this NIM
-        2.2 Run SuSiE on the 200kb region surrounding the NIM with script `runSusie.R` 
-3. Analyze all Susie output with `getSusieStats.m`
-
-#### Sliding window analysis
-
-1. Divide genomes into 200kb windows with 100kb step size.
-2. For each window:
-        2.1 Output the 200 kb region 
-        2.2 Run SuSiE on the 200kb region with script `runSusie.R` 
-3. Analyze all Susie output with `getSusieStats.m`
-
-```diff
-- note to self: 
-/u/home/s/sriram/group/sriram/projects/ukbio/april/nimHeritability/simulation/adaptedScripts/fineMapping
-```
 ### SuSiE to UKBB phenotypes
+The only difference between handling UKBB phenotypes and simulated phenotypes is that phenotypic residuals needs to be computed first by linear regression to regress out the covariates.
 
-```diff
-- note to self:
-Collection of phenotypes: https://docs.google.com/spreadsheets/d/1L7XNxSm1M8rGbJy0G8TydsDhiIgzImhs9LUOZxgN8XM/edit?usp=sharing
-```
