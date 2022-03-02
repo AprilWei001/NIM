@@ -130,5 +130,4 @@ Information about Susie can be found at [SuSiE GitHub](https://stephenslab.githu
 4. Analyze SuSiE outputs and determine the boundary and credible NIM set
 
 ### SuSiE to UKBB phenotypes
-The only difference between handling UKBB phenotypes and simulated phenotypes is that phenotypic residuals needs to be computed first by linear regression to regress out the covariates.
-
+The only difference between handling UKBB phenotypes and simulated phenotypes is that there is covariates in UKBB. So we first compute the phenotypic residuals by linear regression to regress out the covariates (e.g., PC, NIM PC, sex, age), and use the phenotypic residuals as input to SuSiE.
