@@ -6,7 +6,7 @@ Data S3: RHE-mc results with Ancestry+MAF+LD annotations and NIM PCs included in
 Data S4: RHE-mc results with Ancestry only annotation and NIM PCs included in covariates applied to 96 UKBB phenotypes
 Data S5: RHE-mc results with Ancestry+MAF+LD annotation without NIM PC in covariates applied to 96 UKBB phenotypes
 Data S6: Fine mapping FDP in simulated data. 
-*Pay attention to the subtle difference in the headers of Data S3-S6 -- they are not the same*
+*Pay attention to the subtle difference in the headers of Data S3-S6*
 Data S7: 112 credible NIM sets and credible NIMs
 Data S8: SnpEff annotation of all unique credible NIMs
 Data S9. Stratified LD score regression results in simulated data using LD score from 1KG
