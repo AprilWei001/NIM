@@ -19,11 +19,13 @@ In-sample ldscore is comptued with [gcta64](https://cnsgenomics.com/software/gct
 
 With all dependencies in place, run simulation with:
 
-    ./simAllArchitecture.sh <type of architecture> <seed>
+    ./simAnyArchitecture.sh <type of architecture> <seed> <heritability> <number of causal variants>
 for example 
 
-    ./simAllArchitecture.sh POLY 1 
+    ./simAnyArchitecture.sh POLY 1 
 will give the simulation for polygenic architecture with seed 1. 
+
+We use heritability 0.5 or 0.2 for high and low heritability simulation, number of causal variants 10000 or 100000 for moderate and high polygenecity simulation
 
 The types of architecture can be:
 * POLY -- polygenic architecture 
@@ -32,9 +34,6 @@ The types of architecture can be:
 * RARE -- rare SNPs (defined as maf <= 0.05) contributes to 9000 causal variants, and common SNPs contributes 1000 causal variants, 
 * COMMON -- common SNPs (defined as maf <= 0.05) contributes to 9000 causal variants, and rare SNPs contributes 1000 causal variants,
 * 
-Within simAllArchitecture.sh
-hsq="0.5" or "0.2" for high and low heritability simulation
-ncausal=10000 or 100000 for moderate and high polygenecity simulation
 
 ## SNP annotation
 ### Ancestry 
