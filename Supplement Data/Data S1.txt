@@ -1,0 +1,96 @@
+f.48.0.0	Waist circumference	Anthropometry
+f.49.0.0	Hip circumference	Anthropometry
+f.50.0.0	Standing height	Anthropometry
+f.20015.0.0	Sitting height	Anthropometry
+f.21001.0.0	Body mass index (BMI)	Anthropometry
+f.21002.0.0	Weight	Anthropometry
+f.23099.0.0	Body fat percentage	Anthropometry
+f.23100.0.0	Whole body fat mass	Anthropometry
+f.23101.0.0	Whole body fat-free mass	Anthropometry
+f.23102.0.0	Whole body water mass	Anthropometry
+f.23106.0.0	Whole body impedance	Anthropometry
+f.23127.0.0	Trunk fat percentage	Anthropometry
+f.23128.0.0	Trunk fat mass	Anthropometry
+f.23129.0.0	Trunk fat-free mass	Anthropometry
+f.23130.0.0	Trunk predicted mass	Anthropometry
+f.23105.0.0	Basal metabolic rate	Anthropometry
+f.21001.0.0	Body mass index	Anthropometry
+f.48.0.0/f.49.0.0	Waist-hip ratio	Anthropometry
+f.6152.0.0	Asthma	Autoimmune disorders
+f.20002	Autoimmune related	Autoimmune disorders
+f.30600.0.0	Albumin	Blood biochemistry
+f.30660.0.0	Direct bilirubin	Blood biochemistry
+f.30840.0.0	Total bilirubin	Blood biochemistry
+f.30150.0.0	Eosinophil count	Blood biochemistry
+f.30120.0.0	Lymphocyte count	Blood biochemistry
+f.30050.0.0	Mean corpuscular hemoglobin	Blood biochemistry
+f.30130.0.0	Monocyte count	Blood biochemistry
+f.30100.0.0	Mean platelet volume	Blood biochemistry
+f.30270.0.0	Mean sphered cell volume	Blood biochemistry
+f.30110.0.0	Platelet Distribution Width	Blood biochemistry
+f.30080.0.0	Platelet count	Blood biochemistry
+f.30010.0.0	RBC count	Blood biochemistry
+f.30030.0.0	RBC distribution width	Blood biochemistry
+f.30300.0.0	High light scatter reticulocyte count	Blood biochemistry
+f.30000.0.0	White blood cell count	Blood biochemistry
+f.30710.0.0	C-reactive protein	Blood biochemistry
+f.30770.0.0	IGF-1	Blood biochemistry
+f.30790.0.0	Lipoprotein-A	Blood biochemistry
+f.30800.0.0	Oestradiol higher than 212 pmol/L	Blood biochemistry
+f.30810.0.0	Phosphate	Blood biochemistry
+f.30830.0.0	SHBG	Blood biochemistry
+f.30850.0.0	Testosterone	Blood biochemistry
+f.30860.0.0	Total protein	Blood biochemistry
+f.30890.0.0	Vitamin D	Blood biochemistry
+f.102.0.0	"Pulse rate, automated reading"	Blood pressure
+f.4079.0.0	"Diastolic blood pressure, automated reading"	Blood pressure
+f.4080.0.0	"Systolic blood pressure, automated reading"	Blood pressure
+f.4195.0.0	Pulse wave reflection index	Blood pressure
+f.4196.0.0	Pulse wave peak to peak time	Blood pressure
+f.4198.0.0	Position of the pulse wave peak	Blood pressure
+f.4199.0.0	Position of pulse wave notch	Blood pressure
+f.4200.0.0	Position of the shoulder on the pulse waveform	Blood pressure
+f.21021.0.0	Pulse wave Arterial Stiffness index	Blood pressure
+f.3143.0.0	Ankle spacing width	Bone densitometry
+f.3144.0.0	"Heel Broadband ultrasound attenuation, direct entry"	Bone densitometry
+f.3147.0.0	"Heel quantitative ultrasound index (QUI), direct entry"	Bone densitometry
+f.3148.0.0	Heel bone mineral density (BMD)	Bone densitometry
+f.4106.0.0+f.4125.0.0	BMD Heel T-score	Bone densitometry
+f.189.0.0	Townsend deprivation index at recruitment	Environmental factors
+f.1558.0.0	Alcohol intake frequency	Environmental factors
+f.5254.0.0	"Intra-ocular pressure, corneal-compensated (right)"	Eye
+f.5255.0.0	"Intra-ocular pressure, Goldmann-correlated (right)"	Eye
+f.5256.0.0	Corneal hysteresis (right)	Eye
+f.5257.0.0	Corneal resistance factor (right)	Eye
+f.5262.0.0	"Intra-ocular pressure, corneal-compensated (left)"	Eye
+f.5263.0.0	"Intra-ocular pressure, Goldmann-correlated (left)"	Eye
+f.5264.0.0	Corneal hysteresis (left)	Eye
+f.5265.0.0	Corneal resistance factor (left)	Eye
+f.5256.0.0+f.5264.0.0	Corneal Hysteresis	Eye
+f.2178.0.0	Overall health rating	General medical information
+f.30740.0.0	Glucose	Glucose metabolism
+f.30750.0.0	Hemoglobin A1c	Glucose metabolism
+f.30700.0.0	Creatinine	Kidney
+f.30510.0.0	Creatinine in urine	Kidney
+f.30720.0.0	Cystatin-C	Kidney
+f.30500.0.0	Microalbumin in urine	Kidney
+f.30520.0.0	Potassium in urine	Kidney
+f.30530.0.0	Sodium in urine	Kidney
+f.30880.0.0	Urate	Kidney
+f.30670.0.0	Urea	Kidney
+f.30630.0.0	Apolipoprotein A	Lipid metabolism
+f.30640.0.0	Apolipoprotein B	Lipid metabolism
+f.30690.0.0	Cholesterol	Lipid metabolism
+f.30760.0.0	HDL cholesterol	Lipid metabolism
+f.30780.0.0	LDL direct	Lipid metabolism
+f.30870.0.0	Triglycerides	Lipid metabolism
+f.30620.0.0	Alanine aminotransferase	Liver
+f.30610.0.0	Alkaline phosphatase	Liver
+f.30650.0.0	Aspartate aminotransferase	Liver
+f.30730.0.0	Gamma glutamyltransferase	Liver
+f.3064.0.0	Peak expiratory flow (PEF)	Lung
+f.20150.0.0	Forced expiratory volume in 1-second (FEV1)	Lung
+f.20151.0.0	Forced vital capacity (FVC)	Lung
+f.3063.0.0/f.3062.0.0	FEV1-FVC ratio	Lung
+f.1747.0.0	Hair color	Skin and hair
+f.1727.0.0	Tanning (quantitative)	Skin and hair
