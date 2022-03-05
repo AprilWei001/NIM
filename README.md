@@ -60,7 +60,7 @@ For example, in a file named with 'nol.anc.maf.annot', there are 10 annotations 
 ### Information about RHE-mc
 In this study we use an extension of RHE-mc which takes a coefficient file to allow us to define new summary statistics from linear combinations (`-coeff flag`) of the variance components. Both the point estimate and the standard error of the summary statistics are estimated from jackknife.
 Information about the original RHE-mc can be found at [RHE-mc GitHub](https://github.com/sriramlab/RHE-mc)
-This new version with extension is now available at [RHE-mc add link](https:)
+This new version with extension is now available at [RHEmc-coeff](https://github.com/alipazokit/RHEmc-coeff)
 ### Simulated data
 Note that, the gcta64 simulated phenotype does not have a header, e.g.:
 
