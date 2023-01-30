@@ -1,0 +1,48 @@
+Brain Substantia nigra	52
+Ovary	78
+Small Intestine Terminal Ileum	101
+Vagina	118
+Kidney Cortex	137
+Brain Amygdala	186
+Brain Hippocampus	223
+Prostate	272
+Minor Salivary Gland	276
+Brain Spinal cord cervical c-1	291
+Brain Hypothalamus	301
+Liver	311
+Brain Anterior cingulate cortex BA24	356
+Brain Frontal Cortex BA9	431
+Brain Putamen basal ganglia	459
+Artery Coronary	475
+Brain Nucleus accumbens basal ganglia	477
+Cells EBV-transformed lymphocytes	497
+Spleen	498
+Adrenal Gland	500
+Brain Caudate basal ganglia	531
+Brain Cerebellum	553
+Stomach	684
+Brain Cortex	696
+Brain Cerebellar Hemisphere	702
+Colon Transverse	715
+Colon Sigmoid	726
+Breast Mammary Tissue	739
+Pituitary	770
+Muscle Skeletal	820
+Adipose Visceral Omentum	853
+Heart Atrial Appendage	870
+Pancreas	906
+Heart Left Ventricle	946
+Skin Not Sun Exposed Suprapubic	961
+Esophagus Gastroesophageal Junction	1043
+Lung	1055
+Esophagus Muscularis	1064
+Artery Aorta	1066
+Artery Tibial	1080
+Testis	1083
+Thyroid	1162
+Whole Blood	1170
+Esophagus Mucosa	1186
+Skin Sun Exposed Lower leg	1193
+Nerve Tibial	1309
+Adipose Subcutaneous	1339
+Cells Cultured fibroblasts	1349
