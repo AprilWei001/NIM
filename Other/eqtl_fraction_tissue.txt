@@ -1,0 +1,49 @@
+Adipose Subcutaneous	Adipose Tissue	Adipose	17198	1339	0.07785789
+Adipose Visceral Omentum	Adipose Tissue	Adipose	11272	853	0.075674237
+Cells EBV-transformed lymphocytes	Blood	Blood/Immune	2558	497	0.194292416
+Spleen	Spleen	Blood/Immune	6749	498	0.073788709
+Whole Blood	Blood	Blood/Immune	15733	1170	0.074365982
+Artery Aorta	Blood Vessel	Cardiovascular	10517	1066	0.101359703
+Artery Coronary	Blood Vessel	Cardiovascular	3817	475	0.12444328
+Artery Tibial	Blood Vessel	Cardiovascular	16592	1080	0.06509161
+Heart Atrial Appendage	Heart	Cardiovascular	7966	870	0.10921416
+Heart Left Ventricle	Heart	Cardiovascular	8052	946	0.117486339
+Brain Amygdala	Brain	CNS	1364	186	0.136363636
+Brain Anterior cingulate cortex BA24	Brain	CNS	1988	356	0.179074447
+Brain Caudate basal ganglia	Brain	CNS	4295	531	0.12363213
+Brain Cerebellar Hemisphere	Brain	CNS	5865	702	0.119693095
+Brain Cerebellum	Brain	CNS	8705	553	0.063526709
+Brain Cortex	Brain	CNS	5134	696	0.13556681
+Brain Frontal Cortex BA9	Brain	CNS	3730	431	0.115549598
+Brain Hippocampus	Brain	CNS	2580	223	0.086434109
+Brain Hypothalamus	Brain	CNS	2010	301	0.149751244
+Brain Nucleus accumbens basal ganglia	Brain	CNS	3806	477	0.125328429
+Brain Putamen basal ganglia	Brain	CNS	3396	459	0.135159011
+Brain Spinal cord cervical c-1	Brain	CNS	1832	291	0.158842795
+Brain Substantia nigra	Brain	CNS	1204	52	0.043189369
+Colon Sigmoid	Colon	Digestive	6671	726	0.108829261
+Colon Transverse	Colon	Digestive	8606	715	0.083081571
+Esophagus Gastroesophageal Junction	Esophagus	Digestive	8632	1043	0.120829472
+Esophagus Mucosa	Esophagus	Digestive	14182	1186	0.083627133
+Esophagus Muscularis	Esophagus	Digestive	14145	1064	0.075220926
+Small Intestine Terminal Ileum	Small Intestine	Digestive	2360	101	0.04279661
+Stomach	Stomach	Digestive	6438	684	0.106244175
+Adrenal Gland	Adrenal Gland	Endocrine	4396	500	0.113739763
+Pituitary	Pituitary	Endocrine	5054	770	0.152354571
+Testis	Testis	Endocrine	12888	1083	0.084031657
+Thyroid	Thyroid	Endocrine	19109	1162	0.060809043
+Liver	Liver	Liver	2781	311	0.111830277
+Muscle Skeletal	Muscle	Musculoskeletal/connective	16160	820	0.050742574
+Breast Mammary Tissue	Breast	Other	8427	739	0.087694316
+Cells Cultured fibroblasts	Blood	Other	19695	1349	0.068494542
+Kidney Cortex	Kidney	Other	268	137	0.51119403
+Lung	Lung	Other	11290	1055	0.093445527
+Minor Salivary Gland	Salivary Gland	Other	1694	276	0.162927981
+Nerve Tibial	Nerve	Other	18668	1309	0.070119991
+Ovary	Ovary	Other	2538	78	0.030732861
+Pancreas	Pancreas	Other	8513	906	0.106425467
+Prostate	Prostate	Other	2892	272	0.094052559
+Skin Not Sun Exposed Suprapubic	Skin	Other	13985	961	0.068716482
+Skin Sun Exposed Lower leg	Skin	Other	16909	1193	0.070554143
+Uterus	Uterus	Other	1145	0	0
+Vagina	Vagina	Other	1294	118	0.091190108

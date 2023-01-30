@@ -1,0 +1,3 @@
+#!/bin/bash
+
+/home/sriram/bin/plink --bfile /home/data/ukbiobank/data/geno/imp/hard_calls_291273/qced  --show-tags confidentQCedNIMs.txt  --tag-r2 0.$1  --tag-kb 200 --out expandedNIM &
