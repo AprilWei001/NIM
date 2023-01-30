@@ -1,0 +1,10 @@
+#!/bin/bash
+
+path="/home/data/ukbiobank/data/geno/imp/hard_calls_291273/"
+
+~/bin/ProPCA/propca -g  $path/qced -k 5 -l 2 -m 30 -a -cl 0.001 -o qced -miss -nt 10  &
+
+
+
+
+

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+
+~/bin/ProPCA/propca -g confidentNIM -k 20 -l 2 -m 30 -a -cl 0.001 -o confidentNIM   -miss -nt 10  &
+
+~/bin/ProPCA/propca -g expandedNIM -k 20 -l 2 -m 30 -a -cl 0.001 -o expandedNIM   -miss -nt 10  &
+
+
+
+
